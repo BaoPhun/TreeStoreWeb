@@ -1,0 +1,52 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('../../../../assets/images/image-login/banner1.jpg');
+  background-size: cover; // Hình nền sẽ phủ toàn bộ màn hình
+  background-position: center; // Canh giữa hình nền
+}
+h3 {
+  text-align: center; /* Căn giữa nội dung trong thẻ h3 */
+  margin: 0; /* Bỏ margin để căn giữa tốt hơn */
+  padding: 0; /* Bỏ padding nếu có */
+}
+
+.login-wrapper {
+  width: 100%;
+  max-width: 600px; // Đặt kích thước tối đa cho form
+  padding: 20px;
+}
+
+.login-form {
+  background-color: rgba(255, 255, 255, 0.9); // Đặt nền trắng với độ mờ
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Tạo hiệu ứng nổi cho form
+}
+
+.card {
+  border: none; // Loại bỏ đường viền mặc định của card
+}
+
+.form-control {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc; // Đặt viền cho input
+}
+
+.btn-primary {
+  background-color: #79d6c9; // Màu nền của nút
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin:0 180px
+}
+
+.btn-primary:hover {
+  background-color: #046248; // Màu nền của nút khi hover
+}

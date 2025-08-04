@@ -1,0 +1,72 @@
+<div class="col-md-12 col-xl-8">
+  <h5 class="mb-3">Danh sách khách hàng</h5>
+
+  <!-- <div class="mb-3" style="display: flex; justify-content: space-between; align-items: center">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      (input)="filterCustomers()"
+      placeholder="Tìm kiếm khách hàng..."
+      class="form-control"
+      style="width: 300px"
+    /> -->
+
+    <div class="d-flex align-items-center mb-3">
+      <form (ngSubmit)="onSearch()" #searchForm="ngForm" class="d-flex ms-auto">
+      <input 
+        type="text" 
+        id="search" 
+        class="form-control me-2" 
+        [(ngModel)]="searchTerm" 
+        name="search" 
+        placeholder="Tìm kiếm khách hàng" 
+        required>
+      <button type="submit" class="btn btn-secondary">Tìm kiếm</button>
+      </form>
+    </div>
+  <div class="card tbl-card">
+    <div class="table-responsive">
+      <table class="table table-hover mb-0">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Tên khách hàng</th>
+            <th>Email</th>
+            <th>Địa chỉ</th>
+            <th>Số điện thoại</th>
+            <th>Trạng thái</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of filteredCustomers; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ customer.fullname }}</td>
+            <td>{{ customer.email }}</td>
+            <td>{{ customer.address }}</td>
+            <td>{{ customer.phone }}</td>
+            <!-- <td>
+              <button (click)="toggleCustomerActiveStatus(customer)" class="btn"
+                [ngClass]="customer.isActive ? 'btn-success' : 'btn-danger'" style="width: 120px;">
+                {{ customer.isActive ? 'Kích hoạt' : 'Vô hiệu hóa' }}
+              </button>
+            </td> -->
+
+            <td>
+              <button
+                (click)="toggleCustomerActiveStatus(customer)"
+                [ngClass]="{ 'toggle-status-btn': true, unactive: !customer.isActive }"
+              >
+                {{ customer.isActive ? 'Kích hoạt' : 'Vô hiệu khóa' }}
+              </button>
+            </td>
+
+            <td>
+              <button (click)="navigateToEditCustomer(customer.customerId)" class="btn btn-warning btn-sm">Sửa</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<!-- </div> -->
